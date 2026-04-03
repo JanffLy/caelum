@@ -1,6 +1,6 @@
 # Caelum 后端服务
 
-基于 Beego 2.0 框架开发的企业级中后台管理系统后端 API 服务。
+基于 Beego 2.0 框架开发的中后台管理系统后端 API 服务。
 
 ## 技术栈
 
@@ -52,13 +52,13 @@ db.host = 127.0.0.1
 db.port = 3306
 db.database = caelum
 db.username = root
-db.password = 
+db.password =
 db.charset = utf8mb4
 
 # Redis 配置
 redis.host = 127.0.0.1
 redis.port = 6379
-redis.password = 
+redis.password =
 redis.db = 0
 
 # JWT 配置
@@ -93,81 +93,88 @@ go run main.go
 ## API 列表
 
 ### 认证模块
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| POST | /api/v1/auth/login | 用户登录 |
-| POST | /api/v1/auth/logout | 用户登出 |
-| POST | /api/v1/auth/register | 用户注册 |
-| POST | /api/v1/auth/refresh | 刷新Token |
+
+| 方法 | 路径                  | 说明      |
+| ---- | --------------------- | --------- |
+| POST | /api/v1/auth/login    | 用户登录  |
+| POST | /api/v1/auth/logout   | 用户登出  |
+| POST | /api/v1/auth/register | 用户注册  |
+| POST | /api/v1/auth/refresh  | 刷新Token |
 
 ### 用户管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/users | 获取用户列表 |
-| POST | /api/v1/users | 创建用户 |
-| GET | /api/v1/users/:id | 获取用户详情 |
-| PUT | /api/v1/users/:id | 更新用户 |
-| DELETE | /api/v1/users/:id | 删除用户 |
-| PUT | /api/v1/users/:id/reset-password | 重置密码 |
-| PUT | /api/v1/users/:id/assign-roles | 分配角色 |
-| PUT | /api/v1/users/:id/assign-dept | 分配部门 |
-| PUT | /api/v1/users/:id/assign-post | 分配岗位 |
+
+| 方法   | 路径                             | 说明         |
+| ------ | -------------------------------- | ------------ |
+| GET    | /api/v1/users                    | 获取用户列表 |
+| POST   | /api/v1/users                    | 创建用户     |
+| GET    | /api/v1/users/:id                | 获取用户详情 |
+| PUT    | /api/v1/users/:id                | 更新用户     |
+| DELETE | /api/v1/users/:id                | 删除用户     |
+| PUT    | /api/v1/users/:id/reset-password | 重置密码     |
+| PUT    | /api/v1/users/:id/assign-roles   | 分配角色     |
+| PUT    | /api/v1/users/:id/assign-dept    | 分配部门     |
+| PUT    | /api/v1/users/:id/assign-post    | 分配岗位     |
 
 ### 部门管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/depts | 获取部门列表 |
-| POST | /api/v1/depts | 创建部门 |
-| GET | /api/v1/depts/:id | 获取部门详情 |
-| PUT | /api/v1/depts/:id | 更新部门 |
-| DELETE | /api/v1/depts/:id | 删除部门 |
-| GET | /api/v1/depts/tree | 获取部门树 |
+
+| 方法   | 路径               | 说明         |
+| ------ | ------------------ | ------------ |
+| GET    | /api/v1/depts      | 获取部门列表 |
+| POST   | /api/v1/depts      | 创建部门     |
+| GET    | /api/v1/depts/:id  | 获取部门详情 |
+| PUT    | /api/v1/depts/:id  | 更新部门     |
+| DELETE | /api/v1/depts/:id  | 删除部门     |
+| GET    | /api/v1/depts/tree | 获取部门树   |
 
 ### 菜单管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/menus | 获取菜单列表 |
-| POST | /api/v1/menus | 创建菜单 |
-| GET | /api/v1/menus/:id | 获取菜单详情 |
-| PUT | /api/v1/menus/:id | 更新菜单 |
-| DELETE | /api/v1/menus/:id | 删除菜单 |
-| GET | /api/v1/menus/tree | 获取菜单树 |
-| GET | /api/v1/menus/role/:roleId | 获取角色菜单 |
+
+| 方法   | 路径                       | 说明         |
+| ------ | -------------------------- | ------------ |
+| GET    | /api/v1/menus              | 获取菜单列表 |
+| POST   | /api/v1/menus              | 创建菜单     |
+| GET    | /api/v1/menus/:id          | 获取菜单详情 |
+| PUT    | /api/v1/menus/:id          | 更新菜单     |
+| DELETE | /api/v1/menus/:id          | 删除菜单     |
+| GET    | /api/v1/menus/tree         | 获取菜单树   |
+| GET    | /api/v1/menus/role/:roleId | 获取角色菜单 |
 
 ### 角色管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/roles | 获取角色列表 |
-| POST | /api/v1/roles | 创建角色 |
-| GET | /api/v1/roles/:id | 获取角色详情 |
-| PUT | /api/v1/roles/:id | 更新角色 |
-| DELETE | /api/v1/roles/:id | 删除角色 |
-| GET | /api/v1/roles/:id/menus | 获取角色菜单 |
-| PUT | /api/v1/roles/:id/menus | 分配菜单 |
+
+| 方法   | 路径                    | 说明         |
+| ------ | ----------------------- | ------------ |
+| GET    | /api/v1/roles           | 获取角色列表 |
+| POST   | /api/v1/roles           | 创建角色     |
+| GET    | /api/v1/roles/:id       | 获取角色详情 |
+| PUT    | /api/v1/roles/:id       | 更新角色     |
+| DELETE | /api/v1/roles/:id       | 删除角色     |
+| GET    | /api/v1/roles/:id/menus | 获取角色菜单 |
+| PUT    | /api/v1/roles/:id/menus | 分配菜单     |
 
 ### 岗位管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/posts | 获取岗位列表 |
-| POST | /api/v1/posts | 创建岗位 |
-| GET | /api/v1/posts/:id | 获取岗位详情 |
-| PUT | /api/v1/posts/:id | 更新岗位 |
-| DELETE | /api/v1/posts/:id | 删除岗位 |
+
+| 方法   | 路径              | 说明         |
+| ------ | ----------------- | ------------ |
+| GET    | /api/v1/posts     | 获取岗位列表 |
+| POST   | /api/v1/posts     | 创建岗位     |
+| GET    | /api/v1/posts/:id | 获取岗位详情 |
+| PUT    | /api/v1/posts/:id | 更新岗位     |
+| DELETE | /api/v1/posts/:id | 删除岗位     |
 
 ### 字典管理
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | /api/v1/dicts | 获取字典类型列表 |
-| POST | /api/v1/dicts | 创建字典类型 |
-| GET | /api/v1/dicts/:id | 获取字典类型详情 |
-| PUT | /api/v1/dicts/:id | 更新字典类型 |
-| DELETE | /api/v1/dicts/:id | 删除字典类型 |
-| GET | /api/v1/dicts/:id/items | 获取字典项 |
-| GET | /api/v1/dict-items | 获取字典项列表 |
-| POST | /api/v1/dict-items | 创建字典项 |
-| GET | /api/v1/dict-items/:id | 获取字典项详情 |
-| PUT | /api/v1/dict-items/:id | 更新字典项 |
-| DELETE | /api/v1/dict-items/:id | 删除字典项 |
+
+| 方法   | 路径                    | 说明             |
+| ------ | ----------------------- | ---------------- |
+| GET    | /api/v1/dicts           | 获取字典类型列表 |
+| POST   | /api/v1/dicts           | 创建字典类型     |
+| GET    | /api/v1/dicts/:id       | 获取字典类型详情 |
+| PUT    | /api/v1/dicts/:id       | 更新字典类型     |
+| DELETE | /api/v1/dicts/:id       | 删除字典类型     |
+| GET    | /api/v1/dicts/:id/items | 获取字典项       |
+| GET    | /api/v1/dict-items      | 获取字典项列表   |
+| POST   | /api/v1/dict-items      | 创建字典项       |
+| GET    | /api/v1/dict-items/:id  | 获取字典项详情   |
+| PUT    | /api/v1/dict-items/:id  | 更新字典项       |
+| DELETE | /api/v1/dict-items/:id  | 删除字典项       |
 
 ## 统一响应格式
 

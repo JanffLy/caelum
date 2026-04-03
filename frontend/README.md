@@ -1,6 +1,6 @@
 # Caelum 前端应用
 
-基于 Vue 3 + Element Plus 开发的企业级中后台管理系统前端应用。
+基于 Vue 3 + Element Plus 开发的中后台管理系统前端应用。
 
 ## 技术栈
 
@@ -93,12 +93,14 @@ npm run lint
 ## 功能模块
 
 ### 认证模块
+
 - 用户登录
 - 用户登出
 - Token 刷新
 - 权限验证
 
 ### 系统管理
+
 - **用户管理**: 用户列表、创建用户、编辑用户、删除用户、分配角色、分配部门、分配岗位
 - **角色管理**: 角色列表、创建角色、编辑角色、删除角色、分配菜单权限
 - **菜单管理**: 菜单列表、创建菜单、编辑菜单、删除菜单、菜单树
@@ -108,10 +110,10 @@ npm run lint
 
 ## 页面路由
 
-| 路径 | 名称 | 说明 |
-|------|------|------|
-| /login | 登录页 | 用户登录 |
-| / | 首页 | 仪表盘 |
+| 路径         | 名称     | 说明     |
+| ------------ | -------- | -------- |
+| /login       | 登录页   | 用户登录 |
+| /            | 首页     | 仪表盘   |
 | /system/user | 用户管理 | 用户CRUD |
 | /system/role | 角色管理 | 角色CRUD |
 | /system/menu | 菜单管理 | 菜单CRUD |
@@ -134,23 +136,23 @@ npm run lint
 
 ```typescript
 // src/api/user.ts
-import request from '@/utils/request'
-import type { User, UserQuery } from '@/types/user'
+import request from "@/utils/request";
+import type { User, UserQuery } from "@/types/user";
 
 export function getUserList(params: UserQuery) {
   return request({
-    url: '/api/v1/users',
-    method: 'get',
-    params
-  })
+    url: "/api/v1/users",
+    method: "get",
+    params,
+  });
 }
 
 export function createUser(data: User) {
   return request({
-    url: '/api/v1/users',
-    method: 'post',
-    data
-  })
+    url: "/api/v1/users",
+    method: "post",
+    data,
+  });
 }
 ```
 
@@ -160,29 +162,29 @@ export function createUser(data: User) {
 
 ```typescript
 // src/stores/user.ts
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { defineStore } from "pinia";
+import { ref } from "vue";
 
-export const useUserStore = defineStore('user', () => {
-  const token = ref('')
-  const userInfo = ref(null)
+export const useUserStore = defineStore("user", () => {
+  const token = ref("");
+  const userInfo = ref(null);
 
   function setToken(newToken: string) {
-    token.value = newToken
+    token.value = newToken;
   }
 
   return {
     token,
     userInfo,
-    setToken
-  }
-})
+    setToken,
+  };
+});
 ```
 
 ## 环境变量
 
-| 变量名 | 说明 | 默认值 |
-|--------|------|--------|
+| 变量名            | 说明         | 默认值                |
+| ----------------- | ------------ | --------------------- |
 | VITE_API_BASE_URL | API 基础路径 | http://localhost:8080 |
 
 ## 浏览器支持

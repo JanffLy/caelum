@@ -1,4 +1,4 @@
-# Caelum 企业级中后台管理系统
+# Caelum 中后台管理系统
 
 <p align="center">
   <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go" alt="Go">
@@ -9,7 +9,7 @@
 
 ## 简介
 
-Caelum 是一套基于 Go + Beego 后端和 Vue3 + Element Plus 前端开发的企业级中后台管理系统，采用前后端分离架构，提供完整的权限管理和系统功能模块。
+Caelum 是一套基于 Go + Beego 后端和 Vue3 + Element Plus 前端开发的中后台管理系统，采用前后端分离架构，提供完整的权限管理和系统功能模块。
 
 ## 技术栈
 
